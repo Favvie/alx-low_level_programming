@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Description - print digits using putchar
+ *
+ * Return: 0
+ */
+int main(void)
+{
+	int n = 0;
+	while (n < 10)
+	{
+		putchar(n + 48);
+		n++;
+	}
+	putchar('\n');
+	return (0);
+}
