@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <ctype.h>
 
 /**
  * _isupper - checks for uppper case
