@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * print_diagsums - print the diagonal sums of an array
  * @a: array
