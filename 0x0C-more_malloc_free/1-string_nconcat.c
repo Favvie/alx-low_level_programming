@@ -1,4 +1,4 @@
-#include <stdlib.h>
+i#include <stdlib.h>
 /**
  * strlent - get string length
  * @str: string
@@ -29,6 +29,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int s1_length, s2_length, i;
 	char *concat_arr;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
 	s1_length = strlent(s1);
 	s2_length = (int)n;
