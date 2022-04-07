@@ -1,4 +1,4 @@
-i#include <stdlib.h>
+#include <stdlib.h>
 /**
  * strlent - get string length
  * @str: string
