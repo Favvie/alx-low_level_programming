@@ -12,6 +12,7 @@ size_t print_listint(const listint_t *h)
 {
 	/* the parameter passed in, is a pointer to the first element in the list */
 	size_t count = 0;
+	
 	while (h != NULL)
 	{
 		printf("%d\n", h->n);
