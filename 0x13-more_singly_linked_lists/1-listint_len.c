@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -8,6 +6,7 @@
  *
  * Return: number of elements in a list
  */
+
 size_t listint_len(const listint_t *h)
 {
 	size_t count = 0;
