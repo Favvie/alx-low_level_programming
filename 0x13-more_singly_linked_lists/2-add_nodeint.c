@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
-
 /**
  * add_nodeint - a function that adds a new node to the beginning of the linked list
  * @head: address of the first node in the linked list
@@ -9,6 +6,7 @@
  *
  * Return: the pointer to the address of the new node
  */
+
 listint_t *add_nodeint(listint_t **head, const int n)
 {
        	/* declare new node*/
