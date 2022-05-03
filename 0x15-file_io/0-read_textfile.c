@@ -1,34 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
-
 /**
- * read_textfile - reads a text file and prints to the standard output
- * @filename: File to be read
- * @letters: the number of letters it should print
- *
- * Return: 0 if filename is NULL, if file cannot be opened,
- * write fails
+ * read_textfile - check the code for Holberton School students.
+ * @filename: file to read and write
+ * @letters: number of letters to read and write.
+ * Return: letters printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	char buf[letters];
+	ssize_t nletters;
+	int file;
+	char *text;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
-
-	fd = open(filename, O_RDONLY);
-
-	if (fd == -1)
+	text = malloc(sizeof(char) * letters + 1);
+	if (text == NULL)
 		return (0);
-
-	read(fd, buf, letters);
-	buf[letters - 1] = '\o';
-
-	close(fd);
-
-	printf("%s\n", buf);
-
-	return letters;
+	file = open(filename, O_RDONLY);
+	if (file == -1)
+	{
+		free(text);
+		return (0);
+	}
+	nletters = read(file, text, sizeof(char) * letters);
+	if (nletters == -1)
+	{
+		free(text);
+		close(file);
+		return (0);
+	}
+	nletters = write(STDOUT_FILENO, text, nletters);
+	if (nletters == -1)
+	{
+		free(text);
+		close(file);
+		return (0);
+	}
+	free(text);
+	close(file);
+	return (nletters);
 }
